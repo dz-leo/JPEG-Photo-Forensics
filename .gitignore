@@ -1,0 +1,40 @@
+# ---- 分析中间产物（裸像素可达数百 MB，务必忽略）----
+*.bgr
+raw_*.bgr
+hp_*.bin
+*.bin
+
+# 取证输出目录
+_forensics/
+_分析过程/
+_skilltest/
+_smoke/
+_repo_probe/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# ---- Node ----
+node_modules/
+package-lock.json
+
+# ---- 打包产物 ----
+dist/
+*.zip
+
+# ---- 编辑器 / 系统 ----
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- 本地测试样本 ----
+# 注意：真实照片（含个人隐私）不要提交。如需样例请使用合成图或已获授权的素材。
+samples/private/
+*.local.jpg

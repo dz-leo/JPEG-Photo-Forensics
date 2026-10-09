@@ -1,0 +1,35 @@
+# 换行符策略：仓库内统一按文件类型规范化，避免跨平台损坏。
+# 背景：Windows 上 core.autocrlf=true 会把 .sh 检出为 CRLF，
+# 导致脚本在 Linux / macOS 上因 \r 而无法执行。
+
+# 默认：按内容自动判定文本
+* text=auto
+
+# 必须在所有平台保持 LF —— shell 脚本带 CRLF 会直接报错
+*.sh   text eol=lf
+*.py   text eol=lf
+*.js   text eol=lf
+*.mjs  text eol=lf
+*.cjs  text eol=lf
+*.md   text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml  text eol=lf
+
+# Windows 专用脚本保留 CRLF
+*.ps1  text eol=crlf
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+
+# 二进制：不做任何换行转换
+*.jpg  binary
+*.jpeg binary
+*.png  binary
+*.gif  binary
+*.bgr  binary
+*.bin  binary
+*.zip  binary
+
+# 语言统计与语法高亮
+*.sh   linguist-language=Shell
+*.ps1  linguist-language=PowerShell
